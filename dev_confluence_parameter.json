@@ -1,5 +1,5 @@
 {
-  "Parameters":{
+"Parameters": {
    "AutologinCookieAge" : "",
    "BastionHostRequired" : "false",
    "CatalinaOpts" : "",
