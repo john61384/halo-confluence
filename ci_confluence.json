@@ -7,11 +7,6 @@
         },
         "stages": [
             {
-		"capabilities": [
-        "CAPABILITY_AUTO_EXPAND",
-        "CAPABILITY_IAM",
-        "CAPABILITY_NAMED_IAM"
-      ],
                 "name": "Source",
                 "actions": [
                     {
@@ -57,7 +52,8 @@
                             "ActionMode": "CREATE_UPDATE",
                             "RoleArn": "arn:aws:iam::445121286360:role/Halo-CloudFormation",
                             "StackName": "Confluence-preprod-stack",
-                            "TemplateConfiguration": "SourceArtifact::dev_confluence_parameter.json",
+							"Capabilities": "CAPABILITY_AUTO_EXPAND,CAPABILITY_IAM,CAPABILITY_NAMED_IAM",
+							"TemplateConfiguration": "SourceArtifact::dev_confluence_parameter.json",
                             "TemplatePath": "SourceArtifact::quickstart-confluence-master.template.yaml"
                         },
                         "outputArtifacts": [],
@@ -92,8 +88,8 @@
                         "region": "eu-west-2"
                     }
                 ]
-            },
-        {
+            }
+        ],
         "name": "halo-confluence-prod",
         "version": 1
     }  
