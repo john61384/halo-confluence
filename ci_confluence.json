@@ -45,7 +45,7 @@
                 "name": "Deploy",
                 "actions": [
                     {
-                        "name": "Deploy-Jira-Dev-stack",
+                        "name": "Deploy-Confluence-Dev-stack",
                         "actionTypeId": {
                             "category": "Deploy",
                             "owner": "AWS",
@@ -56,7 +56,7 @@
                         "configuration": {
                             "ActionMode": "CREATE_UPDATE",
                             "RoleArn": "arn:aws:iam::445121286360:role/Halo-CloudFormation",
-                            "StackName": "Jira-preprod-stack",
+                            "StackName": "Confluence-preprod-stack",
                             "TemplateConfiguration": "SourceArtifact::dev_confluence_parameter.json",
                             "TemplatePath": "SourceArtifact::quickstart-confluence-master.template.yaml"
                         },
@@ -93,60 +93,8 @@
                     }
                 ]
             },
-            {
-                "name": "Delete-Test-Stack",
-                "actions": [
-                    {
-                        "name": "Delete-test-stack",
-                        "actionTypeId": {
-                            "category": "Deploy",
-                            "owner": "AWS",
-                            "provider": "CloudFormation",
-                            "version": "1"
-                        },
-                        "runOrder": 1,
-                        "configuration": {
-                            "ActionMode": "DELETE_ONLY",
-                            "RoleArn": "arn:aws:iam::445121286360:role/Halo-CloudFormation",
-                            "StackName": "Jira-preprod-stack"
-                        },
-                        "outputArtifacts": [],
-                        "inputArtifacts": [],
-                        "region": "eu-west-2"
-                    }
-                ]
-            },
         {
-            "name": "Deploy-Prod",
-            "actions": [
-                {
-                    "name": "Deploy-prod-stack",
-                    "actionTypeId": {
-                        "category": "Deploy",
-                        "owner": "AWS",
-                        "provider": "CloudFormation",
-                        "version": "1"
-                    },
-                    "runOrder": 1,
-                    "configuration": {
-                        "ActionMode": "CREATE_UPDATE",
-                        "RoleArn": "arn:aws:iam::445121286360:role/Halo-CloudFormation",
-                        "StackName": "Jira-Prod-stack",
-                        "TemplateConfiguration": "SourceArtifact::atlassian-jira/parameters_dev.json",
-                        "TemplatePath": "SourceArtifact::atlassian-jira/templates/quickstart-jira-dc.template.yaml"
-                    },
-                    "outputArtifacts": [],
-                    "inputArtifacts": [
-                        {
-                            "name": "SourceArtifact"
-                        }
-                    ],
-                    "region": "eu-west-2"
-                }
-                ]
-            }
-        ],
-        "name": "halo-jira-prod",
+        "name": "halo-confluence-prod",
         "version": 1
     }  
 }
